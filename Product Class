@@ -1,0 +1,34 @@
+Implement Product class for an online store
+
+class Product :
+
+  def __init__(self, product_id, name, price, quantity):
+    self.product_id = product_id
+    self.name = name
+    self.price = price
+    self.quantity = quantity
+
+
+  def disp(self) :
+    print(f"Product ID : {self.product_id}")
+    print(f"Name : {self.name}")
+    print(f"Price : {self.price}")
+    print(f"Quantity : {self.quantity}")
+
+
+  def addstock(self, value):
+    self.quantity += value
+    print(f"Updated Stock : {self.quantity}")
+
+  def sellstock(self, sell_value) :
+    if( self.quantity >= sell_value) :
+      self.quantity -= sell_value
+      print(f"Updated Stock : {self.quantity}")
+    else :
+      print(f"Insufficient Stock")
+
+
+obj = Product(1, "Apple", 100, 10)
+obj.disp()
+obj.addstock(5)
+obj.sellstock(3)
