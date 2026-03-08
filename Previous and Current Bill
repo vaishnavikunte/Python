@@ -1,0 +1,24 @@
+Previous and Current Bill
+
+class Bill :
+  def __init__(self, prev, curr):
+        self.prev = prev
+        self.curr = curr
+
+  def total_bill(self):
+        units = self.curr - self.prev
+        bill = 0
+
+        if(units <= 100):
+          bill = units * 3.5 + 150
+        elif(units <= 200 and units > 100):
+          bill = units * 5 + 150
+        elif(units > 200):
+          bill = units * 8 + 150
+
+        return bill
+
+
+obj = Bill(100, 200)
+obj.total_bill()
+
